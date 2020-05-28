@@ -3,10 +3,14 @@
 void disableOverlay();
 void _enableOverlay();
 
-int main()
+int main(int argc, char** argv)
 {
-    disableOverlay();
-    
+
+    if (argc == 2 && !strcmp("-show", argv[1])) _enableOverlay();
+
+    else
+        disableOverlay();
+
     return 0;
 }
 
